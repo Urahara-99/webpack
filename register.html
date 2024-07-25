@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="assets/jquery-3.7.1.min.js"></script>
+    <script src="js/register.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="register-heading">REGISTER</h2>
+        <div class="form-container">
+            <form id="registerForm">
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control input-short" id="username" name="username" required autocomplete="username">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control input-short" id="email" name="email" required autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control input-short" id="password" name="password" required autocomplete="new-password">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" class="form-control input-short" id="dob" name="dob" required autocomplete="bday">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control input-short" id="age" name="age" required autocomplete="off">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contact_number">Contact Number:</label>
+                        <input type="text" class="form-control input-short" id="contact_number" name="contact_number" required autocomplete="tel">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom">Register</button>
+                <div id="responseMessage"></div>
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

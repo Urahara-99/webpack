@@ -1,0 +1,9 @@
+{
+    "name": "hari/project",
+    "description": "description",
+    "require": {
+      "predis/predis": "^1.2"
+    },
+    "minimum-stability": "dev"
+  }
+  

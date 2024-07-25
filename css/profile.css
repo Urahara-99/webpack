@@ -1,0 +1,59 @@
+body {
+    background-color: wheat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profile-heading {
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(15, 5, 59);
+    color: #f5ed80;
+    font-size: 24px;
+    height: 65px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(15, 30, 199, 0.2);
+}
+
+.profile-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #110466; /* Border color matching the button */
+}
+
+.form-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.form-group .col-md-6 {
+    margin-bottom: -20px;
+}
+
+.btn-custom {
+    background-color: rgb(15, 5, 59);
+    color: #f5ed80;
+    border: none;
+    padding: 10px;
+    margin: 20px auto;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
