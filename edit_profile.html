@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/edit_profile.css">
+    <script src="assets/jquery-3.7.1.min.js"></script>
+    <script src="js/edit_profile.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="profile-heading">EDIT PROFILE</h2>
+        <div class="form-container">
+            <form id="editProfileForm">
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="contact_number">Contact Number:</label>
+                        <input type="text" id="contact_number" name="contact_number" class="form-control" required>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-custom">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

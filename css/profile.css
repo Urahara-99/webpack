@@ -1,59 +1,65 @@
 body {
-    background-color: wheat;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: wheat;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .profile-heading {
-    display: block;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: rgb(15, 5, 59);
-    color: #f5ed80;
-    font-size: 24px;
-    height: 65px;
-    font-weight: bold;
-    margin: 20px auto;
-    width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(15, 30, 199, 0.2);
+  padding: 1.65rem;
+  border-radius: 1.25rem;
+  background-color: rgb(15, 5, 59);
+  color: #f5ed80;
+  font-size: 1.5rem;
+  height: 5rem;
+  font-weight: bold;
+  margin: 1.25rem auto;
+  width: 100%;
+  max-width: 41.25rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(15, 30, 199, 0.2);
 }
 
 .profile-image-container {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
 .profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #110466; /* Border color matching the button */
+  width: 8.25rem;
+  height: 8.25rem;
+  border-radius: 50%;
+  border: 0.125rem solid #110466;
 }
 
 .form-container {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    margin: 0 auto;
-    max-width: 750px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 1.875rem;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+  margin: 0 auto;
+  max-width: 56.875rem;
 }
 
 .form-group .col-md-6 {
-    margin-bottom: -20px;
+  margin-bottom: 1.1rem;
 }
 
 .btn-custom {
-    background-color: rgb(15, 5, 59);
-    color: #f5ed80;
-    border: none;
-    padding: 10px;
-    margin: 20px auto;
-    width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
+  background-color: rgb(15, 5, 59);
+  color: #f5ed80;
+  border: none;
+  padding: 0.95rem;
+  margin: 1.25rem auto;
+  width: 100%;
+  max-width: 20.625rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  font-size: 1.325rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
+.text-center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=profile.css.map */

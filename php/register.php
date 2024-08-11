@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json');
 error_reporting(0);
+session_start();
 
 // Database credentials
 $mysqlHost = 'localhost';
@@ -29,10 +30,29 @@ $mongoCollection = 'profiles';
 // Get POST data
 $username = $_POST['username'];
 $email = $_POST['email'];
-$password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+$password = $_POST['password'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $contact_number = $_POST['contact_number'];
+
+// Password validation
+if (strlen($password) < 6) {
+    echo json_encode(['status' => 'error', 'message' => 'Password must be at least 6 characters long.']);
+    exit;
+}
+
+if (!preg_match('/[A-Z]/', $password)) {
+    echo json_encode(['status' => 'error', 'message' => 'Password must contain at least one capital letter.']);
+    exit;
+}
+
+if (!preg_match('/[\W_]/', $password)) {
+    echo json_encode(['status' => 'error', 'message' => 'Password must contain at least one special character.']);
+    exit;
+}
+
+// Hash the password
+$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
 // Check if username or email already exists
 $stmt = $mysqli->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
@@ -49,7 +69,7 @@ if ($stmt->num_rows > 0) {
 
 // Insert into MySQL
 $stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-$stmt->bind_param('sss', $username, $email, $password);
+$stmt->bind_param('sss', $username, $email, $hashedPassword);
 
 if ($stmt->execute()) {
     // Get the MySQL inserted ID

@@ -1,8 +1,10 @@
 <?php
+header('Content-Type: application/json');
+
 // Database credentials
 $mongoHost = 'localhost';
 $mongoPort = 27017;
-$mongoDb = 'user_management'; // MongoDB database
+$mongoDb = 'user_management';
 
 // Create MongoDB connection
 $mongoManager = new MongoDB\Driver\Manager("mongodb://$mongoHost:$mongoPort");

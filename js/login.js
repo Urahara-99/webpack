@@ -14,7 +14,7 @@ $(document).ready(function () {
             url: 'php/login.php',
             type: 'POST',
             data: formData,
-            dataType: 'json',  // Expect JSON response
+            dataType: 'json',  
             success: function (response) {
                 console.log("Server Response:", response);
                 if (response.status === 'Login successful!') {

@@ -1,9 +1,9 @@
 {
-    "name": "hari/project",
-    "description": "description",
-    "require": {
-      "predis/predis": "^1.2"
-    },
-    "minimum-stability": "dev"
-  }
-  
+  "name": "hari/project",
+  "description": "description",
+  "require": {
+      "predis/predis": "^3.0@alpha",
+      "mongodb/mongodb": "^1.9"
+  },
+  "minimum-stability": "dev"
+}

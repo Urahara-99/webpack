@@ -1,9 +1,7 @@
 $(document).ready(function () {
-    // Load profile info on page load
     loadProfile();
 });
 
-// Function to load profile information
 function loadProfile() {
     var username = localStorage.getItem("username");
     if (!username) {
@@ -14,17 +12,17 @@ function loadProfile() {
     $.ajax({
         url: 'php/profile.php',
         type: 'GET',
-        data: { username: username }, // Send username as query parameter
+        dataType: 'json', // Automatically parse response as JSON
+        data: { username: username },
         success: function (response) {
-            var jsonResponse = JSON.parse(response);
-            if (jsonResponse.status === 'success') {
-                $("#username").text(jsonResponse.data.username);
-                $("#email").text(jsonResponse.data.email);
-                $("#dob").text(jsonResponse.data.dob);
-                $("#age").text(jsonResponse.data.age);
-                $("#contact_number").text(jsonResponse.data.contact_number);
+            if (response.status === 'success') {
+                $("#username").text(response.data.username);
+                $("#email").text(response.data.email);
+                $("#dob").text(response.data.dob);
+                $("#age").text(response.data.age);
+                $("#contact_number").text(response.data.contact_number);
             } else {
-                alert(jsonResponse.message);
+                alert(response.message);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {

@@ -1,7 +1,5 @@
 <?php
 header('Content-Type: application/json');
-error_reporting(0);
-
 require '../includes/predis_session.php'; // Include the Redis session handler
 
 // Database connection
@@ -16,10 +14,6 @@ if ($conn->connect_error) {
 // Get POST data
 $username_email = isset($_POST['username_email']) ? $_POST['username_email'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-// Debugging output
-error_log("Received username_email: $username_email");
-error_log("Received password: $password");
 
 // Validate input
 if (empty($username_email) || empty($password)) {
@@ -43,7 +37,13 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     if (password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['username']; // Store username in session
+        // Regenerate session ID to prevent session fixation attacks
+        session_regenerate_id(true);
+
+        // Store username in session
+        $_SESSION['user'] = $user['username'];
+
+        // Return success response
         echo json_encode(["status" => "Login successful!", "user" => $user['username']]);
     } else {
         echo json_encode(["status" => "Error: Invalid credentials."]);
@@ -55,4 +55,3 @@ if ($result->num_rows > 0) {
 // Close the statement and connection
 $stmt->close();
 $conn->close();
-?>
