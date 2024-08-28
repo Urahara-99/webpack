@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $('#loginForm').submit(function (e) {
+$(function () {
+    $('#loginForm').on('submit', function (e) {
         e.preventDefault();
 
         var formData = {

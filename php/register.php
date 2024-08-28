@@ -3,16 +3,15 @@ header('Content-Type: application/json');
 error_reporting(0);
 session_start();
 
-// Database credentials
+
 $mysqlHost = 'localhost';
 $mysqlUser = 'root';
 $mysqlPass = '';
-$mysqlDb = 'user_management'; // MySQL database
+$mysqlDb = 'user_management'; 
 
-// MongoDB credentials
 $mongoHost = 'localhost';
 $mongoPort = 27017;
-$mongoDb = 'user_management'; // MongoDB database
+$mongoDb = 'user_management'; 
 
 // Create MySQL connection
 $mysqli = new mysqli($mysqlHost, $mysqlUser, $mysqlPass, $mysqlDb);
@@ -72,10 +71,10 @@ $stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (
 $stmt->bind_param('sss', $username, $email, $hashedPassword);
 
 if ($stmt->execute()) {
-    // Get the MySQL inserted ID
+
     $userId = $stmt->insert_id;
 
-    // Prepare user profile data for MongoDB
+
     $profileData = [
         'userId' => $userId,
         'username' => $username,
