@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,14 +11,12 @@ module.exports = {
     login: path.resolve(__dirname, 'js/login.js'),
     profile: path.resolve(__dirname, 'js/profile.js'),
     register: path.resolve(__dirname, 'js/register.js'),
-    edit_profile: path.resolve(__dirname, 'js/edit_profile.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
     clean: true,
-    assetModuleFilename: 'assets/[name][ext]',
-    publicPath: '/', 
+    publicPath: '/',
   },
   devtool: 'source-map',
   devServer: {
@@ -34,19 +32,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.js$/,
@@ -70,7 +57,7 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       chunks: ['index'],
-      inject: 'body',  
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       title: 'Login',
@@ -93,20 +80,15 @@ module.exports = {
       chunks: ['register'],
       inject: 'body',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Edit Profile',
-      filename: 'edit_profile.html',
-      template: 'edit_profile.html',
-      chunks: ['edit_profile'],
-      inject: 'body',
-    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'assets', to: 'assets' }, // Copy your assets folder
+        { from: 'css', to: 'css' }, // Copy your CSS files
+      ],
     }),
   ],
 };

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).onready(function () {
     $('#loginButton').on('click', function () {
         window.location.href = 'login.html';
