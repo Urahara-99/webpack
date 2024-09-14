@@ -17,7 +17,7 @@ function loadProfile() {
     }
 
     $.ajax({
-        url: 'php/profile.php',
+        url: 'http://localhost/guvi-task-1/php/edit_profile.php',
         type: 'GET',
         dataType: 'json', // Automatically parse response as JSON
         data: { username: username },

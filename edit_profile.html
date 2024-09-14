@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-elem 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost http://localhost:3000 http://localhost/guvi-task-1/php/;">
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/edit_profile.css">
-    <script src="assets/jquery-3.7.1.min.js"></script>
-    <script src="js/edit_profile.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/edit_profile.css">
+    <script src="/assets/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,27 +17,27 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" class="form-control" readonly>
+                        <input type="text" id="username" name="username" class="form-control" readonly autocomplete="username">
                     </div>
                     <div class="col-md-6">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob" class="form-control" required>
+                        <input type="date" id="dob" name="dob" class="form-control" required autocomplete="bday">
                     </div>
                     <div class="col-md-6">
                         <label for="age">Age:</label>
-                        <input type="number" id="age" name="age" class="form-control" required>
+                        <input type="number" id="age" name="age" class="form-control" required autocomplete="off">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="contact_number">Contact Number:</label>
-                        <input type="text" id="contact_number" name="contact_number" class="form-control" required>
+                        <input type="text" id="contact_number" name="contact_number" class="form-control" required autocomplete="tel">
                     </div>
                 </div>
                 <div class="text-center mt-4">

@@ -1,7 +1,18 @@
 <?php
+// Allow requests from the origin where your frontend is served (http://localhost:3000)
+header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true"); // Allow credentials like cookies
+
+// Handle preflight (OPTIONS) requests
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // Preflight request response (CORS)
+    exit(0);
+}
+
 header('Content-Type: application/json');
 error_reporting(0);
-
 session_start();
 
 // Database credentials
@@ -28,12 +39,15 @@ if ($mysqli->connect_error) {
 $mongoManager = new MongoDB\Driver\Manager("mongodb://$mongoHost:$mongoPort");
 $mongoCollection = 'profiles';
 
-// Get POST data
-$username = $_POST['username'];
-$email = $_POST['email'];
-$dob = $_POST['dob'];
-$age = $_POST['age'];
-$contact_number = $_POST['contact_number'];
+// Handle JSON input (in case the frontend sends JSON)
+$data = json_decode(file_get_contents('php://input'), true);
+
+// If no data is sent, fall back to POST
+$username = $data['username'] ?? $_POST['username'];
+$email = $data['email'] ?? $_POST['email'];
+$dob = $data['dob'] ?? $_POST['dob'];
+$age = $data['age'] ?? $_POST['age'];
+$contact_number = $data['contact_number'] ?? $_POST['contact_number'];
 
 // Validate email existence
 $mysqlEmailCheck = $mysqli->prepare("SELECT * FROM users WHERE email = ? AND username != ?");

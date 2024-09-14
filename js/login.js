@@ -1,6 +1,4 @@
-import $ from 'jquery';
-
-$(function () {
+$(document).ready(function () {
     $('#loginForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -11,9 +9,9 @@ $(function () {
 
         // Log the form data to verify
         console.log("Form Data Sent:", formData);
-
+ 
         $.ajax({
-            url: 'php/login.php',
+            url: 'http://localhost/guvi-task-1/php/login.php',
             type: 'POST',
             data: formData,
             dataType: 'json',  
@@ -21,7 +19,7 @@ $(function () {
                 console.log("Server Response:", response);
                 if (response.status === 'Login successful!') {
                     localStorage.setItem('username', response.user);
-                    window.location.href = 'profile.html';
+                    window.location.href = '/profile/';
                 } else {
                     $('#responseMessage').html('<div class="alert alert-danger">' + response.status + '</div>');
                 }

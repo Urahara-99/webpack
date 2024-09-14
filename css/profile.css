@@ -8,19 +8,19 @@ body {
   border-radius: 1.25rem;
   background-color: rgb(15, 5, 59);
   color: #f5ed80;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   height: 5rem;
   font-weight: bold;
-  margin: 1.25rem auto;
+  margin: 50px auto 40px;
   width: 100%;
   max-width: 41.25rem;
   text-align: center;
-  box-shadow: 0 0.25rem 0.5rem rgba(15, 30, 199, 0.2);
+  box-shadow: 0 0.25rem 0.5rem rgba(12, 12, 12, 0.2);
 }
 
 .profile-image-container {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.05rem;
 }
 
 .profile-image {
@@ -32,15 +32,16 @@ body {
 
 .form-container {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-  padding: 1.875rem;
-  border-radius: 0.625rem;
+  padding: 2.875rem;
+  border-radius: 1.625rem;
   background-color: #ffffff;
   margin: 0 auto;
-  max-width: 56.875rem;
+  height: 350px ;
+  max-width: 66.875rem;
 }
 
 .form-group .col-md-6 {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.83rem;
 }
 
 .btn-custom {

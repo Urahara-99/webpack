@@ -12,7 +12,7 @@ body {
   font-size: 24px;
   height: 80px;
   font-weight: bold;
-  margin: 90px auto 70px;
+  margin: 160px auto 60px;
   width: 100%;
   max-width: 550px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -49,8 +49,8 @@ body {
 }
 
 .vl {
-  border-left: 2px solid #11043f;
-  height: 120px;
+  border-left: 1.9px solid #11043f;
+  height: 150px;
   margin: 0 20px;
 }
 

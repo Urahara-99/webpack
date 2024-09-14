@@ -5,17 +5,17 @@ body {
 
 .register-heading {
   display: block;
-  padding: 1.25rem;
+  padding: 1.2rem;
   border-radius: 1.25rem;
   background-color: rgb(15, 5, 59);
   color: #f5ed80;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: bold;
-  margin: 1.875rem auto;
+  margin: 70px auto 40px;
   text-align: center;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 34.375rem;
+  max-width: 34.675rem;
 }
 
 .btn-custom {
@@ -25,20 +25,20 @@ body {
   padding: 0.625rem;
   margin: 1.25rem auto;
   width: 100%;
-  max-width: 16.625rem;
+  max-width: 18.625rem;
   border-radius: 1.25rem;
   box-shadow: 0 0.25rem 0.5rem rgba(110, 91, 194, 0.279);
   display: block;
-  font-size: 1.125rem;
+  font-size: 1.525rem;
 }
 
 .form-container {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-  padding: 1.25rem;
-  border-radius: 0.625rem;
+  padding: 3.15rem;
+  border-radius: 1.625rem;
   background-color: #ffffff;
   margin: 0 auto;
-  max-width: 60rem;
+  max-width: 80rem;
 }
 
 .input-short {
@@ -46,7 +46,7 @@ body {
 }
 
 .form-group .col-md-6 {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 
 /*# sourceMappingURL=register.css.map */

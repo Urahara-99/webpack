@@ -36,7 +36,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'php/register.php', // URL to PHP script
+            url: 'http://localhost/guvi-task-1/php/register.php', // URL to PHP script
             type: 'POST',
             data: formData,
             dataType: 'json', // Expect JSON response

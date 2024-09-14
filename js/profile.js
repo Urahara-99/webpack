@@ -12,9 +12,9 @@ function loadProfile() {
     }
 
     $.ajax({
-        url: 'php/profile.php',
+        url: 'http://localhost/guvi-task-1/php/profile.php',
         type: 'GET',
-        dataType: 'json', // Automatically parse response as JSON
+        dataType: 'json',
         data: { username: username },
         success: function (response) {
             if (response.status === 'success') {

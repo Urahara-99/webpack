@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-elem 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost http://localhost:3000 http://localhost/guvi-task-1/php/;">
     <title>Register</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/register.css">
-    <script src="assets/jquery-3.7.1.min.js"></script>
-    <script src="js/register.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/assets/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -46,9 +45,9 @@
                         <input type="text" class="form-control input-short" id="contact_number" name="contact_number" required autocomplete="tel">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-custom">Register</button>
+                <button type="submit" class="btn btn-custom">Submit</button>
                 <div id="responseMessage"></div>
-                <p>Already have an account? <a href="login.html">Login here</a></p>
+                <p>Already have an account? <a href="/login/">Login here</a></p>
             </form>
         </div>
     </div>

@@ -10,13 +10,14 @@ module.exports = {
     index: path.resolve(__dirname, 'js/index.js'),
     login: path.resolve(__dirname, 'js/login.js'),
     profile: path.resolve(__dirname, 'js/profile.js'),
+    edit_profile: path.resolve(__dirname, 'js/edit_profile.js'),
     register: path.resolve(__dirname, 'js/register.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
     clean: true,
-    publicPath: '/',
+    publicPath: '/',  
   },
   devtool: 'source-map',
   devServer: {
@@ -27,7 +28,22 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/login\/?$/, to: '/login.html' },
+        { from: /^\/profile\/?$/, to: '/profile.html' },
+        { from: /^\/register\/?$/, to: '/register.html' },
+        { from: /^\/edit_profile\/?$/, to: '/edit_profile.html' },
+        { from: /^\/$/, to: '/index.html' },  
+      ],
+    },
+    headers: {
+      'Content-Security-Policy': "default-src 'self'; script-src 'self'; connect-src 'self' http://localhost/guvi-task-1/;",
+    },
+    proxy: {
+      '/css': 'http://localhost:3000',
+      '/assets': 'http://localhost:3000',
+    },  
   },
   module: {
     rules: [
@@ -80,14 +96,21 @@ module.exports = {
       chunks: ['register'],
       inject: 'body',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Edit Profile',
+      filename: 'edit_profile.html',
+      template: 'edit_profile.html',
+      chunks: ['edit_profile'],
+      inject: 'body',
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'assets', to: 'assets' }, // Copy your assets folder
-        { from: 'css', to: 'css' }, // Copy your CSS files
+        { from: 'assets', to: 'assets' },
+        { from: 'css', to: 'css' },
       ],
     }),
   ],
